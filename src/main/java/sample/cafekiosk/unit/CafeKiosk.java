@@ -1,8 +1,8 @@
-package sample.cafekiosk.spring.unit;
+package sample.cafekiosk.unit;
 
 import lombok.Getter;
-import sample.cafekiosk.spring.unit.beverage.Beverage;
-import sample.cafekiosk.spring.unit.order.Order;
+import sample.cafekiosk.unit.beverage.Beverage;
+import sample.cafekiosk.unit.order.Order;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;

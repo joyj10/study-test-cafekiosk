@@ -1,6 +1,7 @@
 package sample.cafekiosk.spring.unit.beverage;
 
 import org.junit.jupiter.api.Test;
+import sample.cafekiosk.unit.beverage.Americano;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;

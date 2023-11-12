@@ -2,9 +2,10 @@ package sample.cafekiosk.spring.unit;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import sample.cafekiosk.spring.unit.beverage.Americano;
-import sample.cafekiosk.spring.unit.beverage.Latte;
-import sample.cafekiosk.spring.unit.order.Order;
+import sample.cafekiosk.unit.CafeKiosk;
+import sample.cafekiosk.unit.beverage.Americano;
+import sample.cafekiosk.unit.beverage.Latte;
+import sample.cafekiosk.unit.order.Order;
 
 import java.time.LocalDateTime;
 

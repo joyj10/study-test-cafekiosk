@@ -1,9 +1,9 @@
-package sample.cafekiosk.spring.unit;
+package sample.cafekiosk.unit;
 
 import lombok.extern.slf4j.Slf4j;
-import sample.cafekiosk.spring.unit.beverage.Americano;
-import sample.cafekiosk.spring.unit.beverage.Latte;
-import sample.cafekiosk.spring.unit.order.Order;
+import sample.cafekiosk.unit.beverage.Americano;
+import sample.cafekiosk.unit.beverage.Latte;
+import sample.cafekiosk.unit.order.Order;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package sample.cafekiosk.spring.unit.beverage;
+package sample.cafekiosk.unit.beverage;
 
 /**
  * Beverage
