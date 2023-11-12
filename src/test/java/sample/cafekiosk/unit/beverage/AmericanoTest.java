@@ -1,4 +1,4 @@
-package sample.cafekiosk.spring.unit.beverage;
+package sample.cafekiosk.unit.beverage;
 
 import org.junit.jupiter.api.Test;
 import sample.cafekiosk.unit.beverage.Americano;

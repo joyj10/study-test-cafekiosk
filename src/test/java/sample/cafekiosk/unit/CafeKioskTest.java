@@ -1,4 +1,4 @@
-package sample.cafekiosk.spring.unit;
+package sample.cafekiosk.unit;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
