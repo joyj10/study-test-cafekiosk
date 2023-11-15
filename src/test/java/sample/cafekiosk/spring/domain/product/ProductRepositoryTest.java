@@ -80,4 +80,15 @@ class ProductRepositoryTest {
                         tuple("002", "카페라떼")
                 ); // 순서 상관 없이 포함 여부 확인해 주는 메서드
     }
+
+    @DisplayName("가장 마지막으로 저장한 상품의 상품번호를 읽어온다.")
+    @Test
+    void findLatesProduct() {
+        // given
+        // when
+        String latesProductNumber = productRepository.findLatesProduct();
+
+        // then
+        assertThat(latesProductNumber).isEqualTo("003");
+    }
 }
