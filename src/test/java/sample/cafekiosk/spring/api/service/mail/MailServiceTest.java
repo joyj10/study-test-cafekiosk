@@ -3,6 +3,7 @@ package sample.cafekiosk.spring.api.service.mail;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -12,7 +13,6 @@ import sample.cafekiosk.spring.domain.history.mail.MailSendHistory;
 import sample.cafekiosk.spring.domain.history.mail.MailSendHistoryRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
@@ -36,8 +36,13 @@ class MailServiceTest {
     void sendMail() {
         // given
         // mock의 경우 RETURS_DEFAULTS 가 있어서, int는 0 객체는 null을 자동으로 반환
-        when(mailSendClient.sendEmail(anyString(), anyString(), anyString(), anyString()))
+        Mockito.when(mailSendClient.sendEmail(anyString(), anyString(), anyString(), anyString()))
                 .thenReturn(true);
+
+        // 위와 같은 방식, 단 given 절에 있기 때문에 given 메서드가 더 적합하게 느껴짐
+        // BDDMockito 는 Mockito 를 하나 감싼 것(기능은 모두 동일하나, 이름만 변경 된 것 이라고 생각하면 됨)
+        BDDMockito.given(mailSendClient.sendEmail(anyString(), anyString(), anyString(), anyString()))
+                .willReturn(true);
 
         // when
         boolean result = mailService.sendMail("", "", "", "");
