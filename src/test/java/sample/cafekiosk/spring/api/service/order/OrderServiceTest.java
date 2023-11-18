@@ -97,7 +97,7 @@ class OrderServiceTest {
 
     @DisplayName("중복되는 상품 번호 리스트로 주문을 생성할 수 있다.")
     @Test
-    void createOrderWithDuplicateProductNumbers() {
+    void  createOrderWithDuplicateProductNumbers() {
         // given
         OrderCreateServiceRequest request = OrderCreateServiceRequest.builder()
                 .productNumbers(List.of("001", "001"))

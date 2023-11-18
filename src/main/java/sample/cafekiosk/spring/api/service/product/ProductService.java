@@ -1,4 +1,4 @@
-package sample.cafekiosk.spring.api.service;
+package sample.cafekiosk.spring.api.service.product;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.util.Strings;

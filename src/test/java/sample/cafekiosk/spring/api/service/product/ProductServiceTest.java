@@ -1,12 +1,11 @@
-package sample.cafekiosk.spring.api.service;
+package sample.cafekiosk.spring.api.service.product;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
-import sample.cafekiosk.spring.api.controller.product.request.ProductCreateRequest;
+import sample.cafekiosk.spring.api.service.product.ProductService;
 import sample.cafekiosk.spring.api.service.product.request.ProductCreateServiceRequest;
 import sample.cafekiosk.spring.api.service.product.response.ProductResponse;
 import sample.cafekiosk.spring.domain.product.Product;
@@ -21,13 +20,28 @@ import static sample.cafekiosk.spring.domain.product.ProductType.HANDMADE;
 
 @ActiveProfiles("test")
 @SpringBootTest
-@Transactional
 class ProductServiceTest {
     @Autowired
     private ProductService productService;
 
     @Autowired
     private ProductRepository productRepository;
+
+    @BeforeAll
+    static void beforeAll() {
+        // before class 테스트 클래스 실행 전에 한번 전체 작업하는 메서드
+    }
+
+    @BeforeEach
+    void setUp() {
+        // before method 매 테스트 전에 동작을 하는 메서드
+    }
+
+    @AfterEach
+    void tearDown() {
+        productRepository.deleteAllInBatch();
+    }
+
     @DisplayName("신규 상품을 등록한다. 상품번호는 가장 최근 상폼번호에서 1 증가한 값이다.")
     @Test
     void createProduct() {
