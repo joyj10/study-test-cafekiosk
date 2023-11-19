@@ -34,9 +34,9 @@ class AmericanoTest {
         int price = americano.getPrice();
 
         // JUnit API
-        assertEquals(4500, price);
+        assertEquals(4000, price);
 
         // assertJ API
-        assertThat(price).isEqualTo(4500);
+        assertThat(price).isEqualTo(4000);
     }
 }

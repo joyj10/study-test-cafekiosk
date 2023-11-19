@@ -1,15 +1,10 @@
 package sample.cafekiosk.spring.api.controller.product;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
+import sample.cafekiosk.spring.ControllerTestSupport;
 import sample.cafekiosk.spring.api.controller.product.request.ProductCreateRequest;
-import sample.cafekiosk.spring.api.service.product.ProductService;
 import sample.cafekiosk.spring.api.service.product.response.ProductResponse;
 
 import java.util.List;
@@ -23,20 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static sample.cafekiosk.spring.domain.product.ProductSellingStatus.SELLING;
 import static sample.cafekiosk.spring.domain.product.ProductType.HANDMADE;
 
-@WebMvcTest(controllers = ProductController.class) // 컨트롤러 관련 빈들만 올리는 가벼운 테스트 어노테이션
-class ProductControllerTest {
-
-    // 서비스 레이어 하위로는  mocking 처리를 하고, 이것을 도와주는 테스트 프레임워크
-    @Autowired
-    private MockMvc mockMvc;
-
-    // Json과 Object 간의 직렬화, 역직렬화를 도와주는 것
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    // 컨테이너에 mockito로 만든 mock 객체를 만드는 역할, 이게 없으면 productService 업다고 나옴
-    @MockBean
-    private ProductService productService;
+class ProductControllerTest extends ControllerTestSupport {
 
     @DisplayName("신규 상품을 등록한다.")
     @Test
