@@ -36,6 +36,9 @@ dependencies {
 
     // h2
     runtimeOnly 'com.h2database:h2'
+
+    // google : guava
+    implementation("com.google.guava:guava:32.1.3-jre")
 }
 
 tasks.named('bootBuildImage') {
