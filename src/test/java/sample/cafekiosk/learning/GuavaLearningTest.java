@@ -24,7 +24,7 @@ class GuavaLearningTest {
         // when
         List<List<Integer>> partition = Lists.partition(integers, 3);
 
-        // then
+        // thend
         assertThat(partition).hasSize(2)
                 .isEqualTo(List.of(
                         List.of(1,2,3),
@@ -67,7 +67,7 @@ class GuavaLearningTest {
 
         // then
         assertThat(result).hasSize(3)
-                .isEqualTo(List.of("아메리카노","카페라뗴","카푸치노"));
+                .isEqualTo(List.of("아메리카노","카페라떼","카푸치노"));
     }
 
     @DisplayName("멀티맵 삭제 기능")
